@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#637a47">
+  <title>筑见 ZHUJIAN · 用双手，重新遇见一座非遗建筑</title>
+  <link rel="preload" as="image" href="assets/yak-hair-thin-v3.webp">
+  <link rel="stylesheet" href="style.css?v=home-intro-v6">
+</head>
+<body data-layout="directory">
+  <main class="app-shell">
+    <header class="shell-topbar">
+      <a class="shell-brand" href="#" id="shell-brand" aria-label="返回目录">
+        <img src="assets/logo.svg" alt="" aria-hidden="true">
+        <span>筑见 ZHUJIAN</span>
+      </a>
+
+      <div class="layout-switch" role="group" aria-label="选择页面">
+        <button class="layout-option is-active" type="button" data-layout-option="directory">目录</button>
+        <button class="layout-option" type="button" data-layout-option="landscape">体验中</button>
+      </div>
+
+      <span class="project-index">
+        <span class="directory-index">目录 / 营造技艺</span>
+        <span class="experience-index">01 / 巴青牛毛帐篷</span>
+      </span>
+    </header>
+
+    <section class="experience-stage">
+      <div class="directory-page" id="directory-page">
+        <div class="directory-content">
+          <p class="directory-eyebrow">筑见 ZHUJIAN</p>
+          <h1 class="directory-title">用双手，<br>重新遇见一座非遗建筑。</h1>
+          <p class="directory-subtitle">将建筑非遗的营造过程，<br class="mobile-break">转化为可体验、可生成、可分享的数字互动。</p>
+          <p class="directory-intro">从巴青牦牛毛帐篷开始，用手势编织布面、牵引成形，<br class="desktop-break">生成并分享属于你的营造作品。</p>
+          <h2 class="directory-section-title">选择一项营造技艺</h2>
+          <ul class="directory-list">
+            <li class="directory-item is-active" data-project="tent" role="button" tabindex="0" aria-label="体验巴青牛毛帐篷">
+              <span class="item-number">01</span><span class="item-title">巴青牛毛帐篷</span><span class="item-status">开始体验</span>
+            </li>
+            <li class="directory-item is-locked" data-project="wood" role="button" tabindex="0" aria-disabled="true">
+              <span class="item-number">02</span><span class="item-title">侗族木构营造技艺</span><span class="item-status">即将开放</span>
+            </li>
+            <li class="directory-item is-locked" data-project="xiangshan" role="button" tabindex="0" aria-disabled="true">
+              <span class="item-number">03</span><span class="item-title">香山帮传统建筑营造</span><span class="item-status">即将开放</span>
+            </li>
+            <li class="directory-item is-locked" data-project="hui" role="button" tabindex="0" aria-disabled="true">
+              <span class="item-number">04</span><span class="item-title">徽派民居营造技艺</span><span class="item-status">即将开放</span>
+            </li>
+            <li class="directory-item is-locked" data-project="tower" role="button" tabindex="0" aria-disabled="true">
+              <span class="item-number">05</span><span class="item-title">藏式碉楼营造技艺</span><span class="item-status">即将开放</span>
+            </li>
+          </ul>
+          <p class="directory-feedback" id="directory-feedback" aria-live="polite">点击项目进入体验</p>
+        </div>
+      </div>
+
+      <div class="experience" id="experience-content" aria-label="巴青黑牛毛帐篷手势体验">
+    <video id="camera" playsinline muted aria-label="实时摄像头画面"></video>
+    <div class="camera-fallback" aria-hidden="true"></div>
+    <canvas id="experience-canvas"></canvas>
+
+    <div class="final-landscape" id="final-landscape" aria-hidden="true">
+      <div class="final-landscape-near"></div>
+      <div class="final-landscape-base"></div>
+      <div class="final-landscape-cloth"></div>
+      <div class="final-landscape-grass is-back"></div>
+      <div class="final-landscape-grass is-front"></div>
+      <div class="final-landscape-peel"></div>
+    </div>
+
+    <div class="grain" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+
+    <button class="landscape-result-hint" id="landscape-result-hint" type="button">
+      查看生成结果
+    </button>
+
+    <button class="back-home" id="back-home" type="button" aria-label="返回">返回</button>
+
+    <aside class="phase-rail" aria-label="体验进度">
+      <div class="phase-line"><i id="phase-line-progress"></i></div>
+      <ol id="phase-list">
+        <li data-stage="weave"><span>01</span><b>编织</b></li>
+        <li data-stage="tension"><span>02</span><b>张拉</b></li>
+        <li data-stage="balance"><span>03</span><b>平衡</b></li>
+        <li data-stage="settle"><span>04</span><b>落地</b></li>
+        <li data-stage="focus"><span>05</span><b>对焦</b></li>
+      </ol>
+    </aside>
+
+    <section class="landing" id="landing" aria-labelledby="landing-title">
+      <p class="kicker">THREAD · TENSION · SHELTER</p>
+      <h1 id="landing-title">用双手，<br>撑起一座<span>会呼吸的家</span></h1>
+      <p class="landing-copy">
+        一根牦牛毛线如何成为一座空间？<br>
+        让双手沿着编织、张拉与平衡的路径找到答案。
+      </p>
+      <div class="landing-actions">
+        <button class="primary-action" id="start-camera" type="button">
+          <span class="action-orbit" aria-hidden="true"></span>
+          <span>开启摄像头体验</span>
+        </button>
+        <button class="text-action" id="start-demo" type="button">先看完整演示</button>
+      </div>
+      <p class="permission-note">手势识别仅在当前设备中运行，不会上传摄像头画面。</p>
+    </section>
+
+    <div class="camera-status" id="camera-status" aria-live="polite">
+      <i></i><span>等待开始</span>
+    </div>
+
+    <section class="gesture-hud" id="gesture-hud" aria-live="polite">
+      <div class="stage-meta">
+        <span id="stage-index">01 / 05</span>
+        <span id="stage-name">编织</span>
+      </div>
+      <p id="stage-prompt">双手拉开，横向划过，再向下压紧。</p>
+      <div class="hold-meter" id="hold-meter" aria-hidden="true">
+        <i id="hold-meter-fill"></i>
+      </div>
+    </section>
+
+    <nav class="review-controls" id="review-controls" aria-label="营造过程预览" hidden>
+      <div class="review-timeline"><span id="review-phase">展布</span><input id="review-progress" type="range" min="0" max="100" step=".1" value="0" aria-label="营造进度"><span>成形</span></div>
+      <div class="review-actions"><button id="review-replay" type="button">重播营造</button><button id="review-pause" type="button">暂停</button><button id="review-continue" type="button">继续完整演示</button></div>
+    </nav>
+    <div class="stage-feedback" id="stage-feedback" aria-hidden="true"></div>
+
+    <section class="reveal" id="reveal" aria-labelledby="result-title">
+      <div class="reveal-image" role="img" aria-label="雪山草甸中的巴青黑牛毛帐篷"></div>
+      <div class="reveal-copy">
+        <p class="kicker result-kicker">YOUR TENSION RESULT</p>
+        <h2 class="result-title" id="result-title"><span class="result-lead">你撑起了</span><span class="result-type" id="result-type">「逆风而立的帐篷」</span></h2>
+        <div class="result-metrics">
+          <p class="result-row result-stability"><span>稳定度</span><strong id="result-stability">87%</strong></p>
+          <p class="result-row result-structure"><span>结构状态</span><strong id="result-structure">向外生长</strong></p>
+        </div>
+        <p class="result-source" id="result-source">灵感来自藏族牛毛帐篷营造技艺</p>
+        <p class="result-history" id="result-history">巴青牛毛帐篷编制技艺流传于藏北牧区，2021 年列入第五批国家级非物质文化遗产代表性项目名录。传统帐篷通常由多幅“日雅”粗氆氇缝合而成，制作需经过剪毛、梳毛、捻线、卷线、铺线、编织等工序，再通过拉绳、撑杆和木橛调整张力。它不是固定在地上的房子，而是牧民随草场迁徙时，一次次被重新撑起的家。</p>
+        <div class="reveal-actions">
+          <button class="primary-action compact" id="share-result" type="button">分享我的生成结果</button>
+          <button class="text-action light" id="show-process" type="button">查看营造过程</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="share-page" id="share-page" aria-labelledby="share-title" aria-hidden="true">
+      <button class="share-page-back" id="share-page-back" type="button">返回结果</button>
+      <article class="share-card">
+        <div class="share-card-content">
+          <p class="share-eyebrow">MY TENSION SPACE · 01</p>
+          <h2 class="share-title" id="share-title"><span class="share-result-lead">你撑起了</span><span class="share-result-type" id="share-result-type">「逆风而立的帐篷」</span></h2>
+          <div class="share-metrics">
+            <div class="share-stability"><span>稳定度</span><strong id="share-stability">87%</strong></div>
+            <div class="share-structure"><span>结构状态</span><strong id="share-structure">向外生长</strong></div>
+          </div>
+          <div class="share-media">
+            <video id="share-process-video" playsinline muted loop poster="assets/last_image.png"></video>
+            <button class="share-play" id="share-play" type="button" aria-label="播放用户营造过程"><span aria-hidden="true"></span></button>
+          </div>
+          <p class="share-media-caption">用户营造过程</p>
+          <p class="share-source" id="share-source">灵感来自藏族牛毛帐篷营造技艺</p>
+          <p class="share-history" id="share-history">巴青牛毛帐篷编制技艺流传于藏北牧区，2021 年列入第五批国家级非物质文化遗产代表性项目名录。传统帐篷通常由多幅“日雅”粗氆氇缝合而成，制作需经过剪毛、梳毛、捻线、卷线、铺线、编织等工序，再通过拉绳、撑杆和木橛调整张力。它不是固定在地上的房子，而是牧民随草场迁徙时，一次次被重新撑起的家。</p>
+          <div class="share-spacer"></div>
+          <div class="share-quote">
+            <p>一根牦牛毛线如何成为<span>一座空间？</span></p>
+            <p>让双手沿着<span>编织、张拉与平衡</span>的路径找到答案。</p>
+          </div>
+          <a class="share-url" href="https://project10minimax.aoe-designstudio.art/" target="_blank" rel="noreferrer">project10minimax.aoe-designstudio.art</a>
+          <button class="share-copy-link" id="share-copy-link" type="button">复制分享链接</button>
+        </div>
+      </article>
+    </section>
+
+    <section class="process-sheet" id="process-sheet" aria-labelledby="process-title">
+      <button class="sheet-back" id="sheet-back" type="button" aria-label="返回">返回</button>
+      <div class="sheet-heading">
+        <p class="kicker">FROM THREAD TO HOME</p>
+        <h2 id="process-title">它如何成为一座家</h2>
+      </div>
+      <div class="process-intro">
+        <h3>非遗营造技艺</h3>
+        <p>巴青牛毛帐篷编制技艺是流传于西藏那曲市巴青县的传统营造技艺，也是藏北游牧文化的重要象征。帐篷以牛毛织成的粗氆氇“日雅”为主要材料，经剪毛、梳毛、捻线、卷线、铺线和编织等工序制作，具有冬暖夏凉、防雨耐腐、便于驮运等特点，被誉为藏北牧民“流动的家”。这项技艺已有300余年历史，凝聚了藏族人民适应高寒环境的生活智慧，对传承传统文化、增强文化认同具有重要意义。</p>
+      </div>
+      <div class="process-grid">
+        <figure>
+          <img src="assets/S01.jpg" alt="剪取牦牛毛">
+          <figcaption><b>01 · 剪取毛料</b><span>牧民从牦牛身上剪下毛，拣出适合织作的长纤维，再整理成一簇簇毛料。</span></figcaption>
+        </figure>
+        <figure>
+          <img src="assets/S02.jpg" alt="捻合牛毛线">
+          <figcaption><b>02 · 捻合成线</b><span>纤维沿同一方向缠绕、拉长，成为带着毛羽与粗细变化的牛毛线。</span></figcaption>
+        </figure>
+        <figure>
+          <img src="assets/S03.jpg" alt="编织牛毛织片">
+          <figcaption><b>03 · 编织成幅</b><span>经线被拉直，纬线反复穿过并逐行压紧，织成狭长的“日雅”牛毛织片。</span></figcaption>
+        </figure>
+        <figure>
+          <img src="assets/S04.png" alt="拼接篷布">
+          <figcaption><b>04 · 拼接成面</b><span>多幅窄织片沿边缘相接，缝合痕迹将它们连成一整块柔韧篷布。</span></figcaption>
+        </figure>
+        <figure>
+          <img src="assets/S05.png" alt="张拉帐篷">
+          <figcaption><b>05 · 张拉成形</b><span>拉索向外延伸，松弛的篷布被缓缓绷紧，由平面隆起为可容纳人的空间。</span></figcaption>
+        </figure>
+        <figure>
+          <img src="assets/S06.png" alt="锚固落地">
+          <figcaption><b>06 · 锚固落地</b><span>篷布向下展开，拉索连接地桩，柔性的结构被固定在此刻的土地上。</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <div class="error-panel" id="error-panel" role="alert">
+      <strong>暂时无法开启摄像头</strong>
+      <p id="error-copy"></p>
+      <button id="error-demo" type="button">改用演示模式</button>
+    </div>
+
+      </div>
+    </section>
+
+    <footer class="footer-note">
+      <p>柔软的织物，因为多个方向的拉力达到平衡，成为能够容纳人的空间。</p>
+    </footer>
+  </main>
+
+  <script type="module" src="app.js?v=entry-choice-v7"></script>
+</body>
+</html>
+
